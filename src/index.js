@@ -1,7 +1,9 @@
-import { createInput, createLittleMurkup, createBigMurkup} from './js/markup.js'
+import { createInput, createLittleMurkup, createBigMurkup} from './js/markup.js';
 import { fetchProductsByQuery } from './js/fetchCountries.js';
-import lodashDebounce from 'https://cdn.jsdelivr.net/npm/lodash.debounce@4.0.8/+esm'
-import notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3.2.7/+esm'
+// import lodashDebounce from 'https://cdn.jsdelivr.net/npm/lodash.debounce@4.0.8/+esm';
+// import notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3.2.7/+esm';
+import lodashDebounce from 'lodash.debounce';
+import notiflix from 'notiflix';
 
 createInput();
 
