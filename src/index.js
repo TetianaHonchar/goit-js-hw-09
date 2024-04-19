@@ -1,9 +1,7 @@
 import { createInput, createLittleMurkup, createBigMurkup} from './js/markup.js';
 import { fetchProductsByQuery } from './js/fetchCountries.js';
-// import lodashDebounce from 'https://cdn.jsdelivr.net/npm/lodash.debounce@4.0.8/+esm';
-// import notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3.2.7/+esm';
 import lodashDebounce from 'lodash.debounce';
-import notiflix from 'notiflix';
+import { Notify } from 'notiflix';
 
 createInput();
 
@@ -24,13 +22,13 @@ async function OnSearchBoxInput() {
         const countries = await fetchProductsByQuery(name);
         
         if (!countries || countries.length === 0) {
-            notiflix.Notify.failure('Oops, there is no country with that name');
+            Notify.failure('Oops, there is no country with that name');
             countryInfoRef.innerHTML = '';
             return;
         }
 
         if (countries.length > 10) {
-            notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
+            Notify.info('Too many matches found. Please enter a more specific name.');
             return; 
         }
 
